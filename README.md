@@ -1,7 +1,7 @@
 # IP Sentinel (IP 哨兵) - Cloudflare Worker
 **IP Sentinel** 是一个运行在 Cloudflare Workers 上的单文件网络检测工具。它集成了 IP 查询、网络连通性测试、WebRTC 隐私检测、风险评分以及 PWA 支持，界面采用现代化的 React + Tailwind CSS 构建。
 
-** 演示地址： [IP Sentinel](https://ip.wanouge.com)。
+** 演示地址： [IP Sentinel](https://ipsentinel.pages.dev)。
 
 ## ✨ 主要特性
 
@@ -37,20 +37,30 @@
 * `ping0.cc` (网络分析)
 
 
-## 🚀 部署指南 (快速上手)
-
-最简单的部署方式是直接在 Cloudflare Dashboard 上操作，无需本地环境。
-
-### 如何部署：直接复制 (最快)
+### 方式一：部署到 Cloudflare Workers (最简单)
 
 1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)。
-2. 进入左侧菜单的 **Workers & Pages**。
-3. 点击 **Create Application** -> **Create Worker**。
-4. 为你的 Worker 起个名字（例如 `ip-sentinel`），点击 **Deploy**。
-5. 部署完成后，点击 **Edit code**。
-6. 打开你本地的 `Worker.js` 文件，全选并复制所有代码。
-7. 在 Cloudflare 编辑器中，删除原有的 `worker.js` 内容，粘贴你刚才复制的代码。
-8. 点击右上角的 **Deploy** 保存。
+2. 进入 **Workers & Pages** -> **Create Application** -> **Create Worker**。
+3. 点击 **Deploy** 部署一个初始 Worker。
+4. 点击 **Edit code**，将 `Worker.js` 的内容覆盖编辑器中的代码。
+5. 点击右上角的 **Deploy** 保存并发布。
+
+### 方式二：部署到 Cloudflare Pages (直接上传)
+
+1. 在本地电脑创建一个文件夹命名为 `public`，将代码文件重命名为 `_worker.js` 并放入其中。
+2. 登录 Cloudflare Dashboard，进入 **Workers & Pages** -> **Create Application** -> **Pages** -> **Upload assets**。
+3. 创建项目并将 `public` 文件夹拖拽上传，点击 **Deploy Site**。
+
+### 方式三：部署到 Cloudflare Pages + GitHub (推荐)
+
+1. **Fork 本项目**到你的 GitHub 账号。
+2. 打开 Cloudflare Dashboard，进入 **Workers & Pages** -> **Create Application** -> **Pages** -> **Connect to Git**。
+3. 选择刚才 Fork 的仓库，点击 **Begin setup**。
+4. **关键步骤**：在构建配置中：
+* **Build command**: (留空)
+* **Build output directory**: 填入 `public`
+5. 点击 **Save and Deploy** 即可。
+
 
 ### ⚙️ 个性化配置 (环境变量)
 
@@ -92,4 +102,3 @@
 
 * 原作者/定制版标识: **DollSenior (玩偶学长)**
 * UI 设计灵感来源于开源社区优秀的 IP 工具箱项目。
-
